@@ -7,8 +7,12 @@ const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-
-app.use(cors());
+const frontendUrl = "https://meme-projet-2.onrender.com";
+app.use(cors(
+  {
+    origin:frontendUrl
+  }
+));
 app.use(express.json());
 
 const storage = multer.memoryStorage();
@@ -123,7 +127,7 @@ app.delete("/images/:publicId", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0',() => {
   console.log(`✅ Serveur lancé sur http://localhost:${PORT}`);
 
 });
