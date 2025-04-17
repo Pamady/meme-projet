@@ -30,7 +30,7 @@ const Gallery = () => {
   const fetchMemesFromCloudinary = async () => {
     try {
       const userId = localStorage.getItem("userId");
-      const response = await fetch(`http://localhost:3000/images?userId=${userId}`);
+      const response = await fetch(`https://meme-projet-1.onrender.com/images?userId=${userId}`);
       if (!response.ok) throw new Error("Erreur de récupération");
   
       const memes = await response.json();
@@ -54,7 +54,7 @@ const saveMemesToLocalStorage = (memes) => {
     if (!window.confirm("Es-tu sûr(e) de vouloir supprimer ce mème ?")) return;
   
     try {
-      const res = await fetch(`http://localhost:3000/images/${publicId}`, {
+      const res = await fetch(`https://meme-projet-1.onrender.com/images/${publicId}`, {
         method: "DELETE",
       });
       const data = await res.json();
