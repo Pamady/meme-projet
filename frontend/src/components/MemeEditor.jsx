@@ -37,7 +37,7 @@ const MemeEditor = () => {
     formData.append("caption", memeText);
     formData.append("userId", userId);
 
-    const response = await fetch("http://localhost:3000/images/upload", {
+    const response = await fetch("https://meme-projet-1.onrender.com/images/upload", {
       method: "POST",
       body: formData,
     });
