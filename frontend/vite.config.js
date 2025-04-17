@@ -1,7 +1,7 @@
-import { definitionConfig } from 'vite'
+import { defineConfig } from 'vite'
 import réagis from '@vitejs/plugin-react'
 
-export default definitionConfig({
+export default defineConfig({
   plugins: [react()],
   server: {
     host: '0.0.0.0', 
