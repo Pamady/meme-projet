@@ -10,7 +10,9 @@ const PORT = process.env.PORT || 3000;
 const frontendUrl = "https://meme-projet-2.onrender.com";
 app.use(cors(
   {
-    origin:frontendUrl
+    origin:frontendUrl,
+    methods: ['GET', 'POST', 'DELETE'],
+    credentials: true,
   }
 ));
 app.use(express.json());
