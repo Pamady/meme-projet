@@ -17,7 +17,7 @@ const upload = multer({ storage });
   const apiKey = process.env.CLOUDINARY_API_KEY;
   const apiSecret = process.env.CLOUDINARY_API_SECRET;
 
-  
+   
   app.get("/images", async (req, res) => {
     const userId = req.query.userId;
     // Cloudinary authentication
